@@ -38,6 +38,7 @@ function check_project_struct {
 # setup testing output folder
 function setup_testing_input_output {
   TEST_OUTPUT_PATH=${GRADER_ROOT}/temp
+  echo $TEST_OUTPUT_PATH
   if [ -d ${TEST_OUTPUT_PATH} ]; then
     rm -rf ${TEST_OUTPUT_PATH}
   fi
