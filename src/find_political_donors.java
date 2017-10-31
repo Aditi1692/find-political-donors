@@ -61,7 +61,7 @@ public class find_political_donors {
                 while(j<input.length){
                 	String isDate = input[j].replace("/", "");
                 	if(isNumeric(isDate)  && input[j].length() >= 8){
-                		System.out.println("DATE: "+isDate);
+                		//System.out.println("DATE: "+isDate);
                 		transaction_date = isDate;
                 		j++;
                 		break;
