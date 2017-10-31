@@ -15,10 +15,9 @@ public class find_political_donors {
 	private static String[] state_name = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "AS", "DC", "FM", "GU", "MH", "MP", "PW", "PR", "VI"};
 	public static void main(String[] args) {
 		String line = null;
-		String fileName = arg[0];
+		String fileName = args[0];
 		//String fileName = "C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\input\\your-own-test.txt";
 		//String fileName = "C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\input\\itcont.txt";
-		
 		HashMap<String, User_Zipcode> user_zipcode = new HashMap<>();
 		HashMap<String, User_Date> user_date = new HashMap<>();
 		
@@ -32,12 +31,12 @@ public class find_political_donors {
                 new BufferedReader(fileReader);
 
           //create an print writer for writing to a file
-            PrintWriter medianvals_by_date = new PrintWriter(new FileWriter(arg[1]));
-            //PrintWriter medianvals_by_date = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\output\\medianvals_by_date.txt"));
+            PrintWriter medianvals_by_date = new PrintWriter(new FileWriter(args[1]));
+            //PrintWriter medianvals_by_date = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\output\\medianvals_by_date.txt"));
 	    
           //create an print writer for writing to a file
-            PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter(arg[2]));
-            //PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\output\\medianvals_by_zip.txt"));
+            PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter(args[2]));
+            //PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\output\\medianvals_by_zip.txt"));
            
             
             while((line = bufferedReader.readLine()) != null) {
@@ -53,7 +52,7 @@ public class find_political_donors {
                 String zipcode = null;
                 for(j=1; j<input.length; j++){
                 	if(isNumeric(input[j]) && Arrays.asList(state_name).contains(input[j-1])){
-                		System.out.println("ZIPCODE: " + input[j]);
+                		//System.out.println("ZIPCODE: " + input[j]);
                 		zipcode = input[j++];
                 		break;
                 	}
@@ -61,7 +60,7 @@ public class find_political_donors {
                 String transaction_date = null;
                 while(j<input.length){
                 	String isDate = input[j].replace("/", "");
-                	if(isNumeric(isDate)){
+                	if(isNumeric(isDate)  && input[j].length() >= 8){
                 		System.out.println("DATE: "+isDate);
                 		transaction_date = isDate;
                 		j++;
@@ -74,7 +73,7 @@ public class find_political_donors {
                 String transaction_amt = null;
                 while(j<input.length){
                 	if(isNumeric(input[j])){
-                		System.out.println("AMOUNT: " + input[j]);
+                		//System.out.println("AMOUNT: " + input[j]);
                 		transaction_amt = input[j++];
                 		break;
                 	}
@@ -82,7 +81,7 @@ public class find_political_donors {
                 }
                 
                 String other_id = j>=input.length?"":input[j];
-                System.out.println(" other_id: "+other_id);
+                //System.out.println(" other_id: "+other_id);
             
 				// if cmte_id or transaction_amt is empty or other_id is null,
 				// ignore calculations in both files
@@ -143,9 +142,10 @@ public class find_political_donors {
             medianvals_by_zip.close();
         }
         catch(FileNotFoundException ex) {
-            System.out.println(
+            /*System.out.println(
                 "Unable to open file '" + 
-                fileName + "'");                
+                fileName + "'");*/
+        	ex.printStackTrace();
         }
         catch(IOException ex) {
             System.out.println(
