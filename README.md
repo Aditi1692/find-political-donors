@@ -7,13 +7,16 @@ Generated output files:
 2. medianvals_by_date.txt: has the calculated median, total dollar amount and total number of contributions by recipient and date.
 
 Instructions to run the program:
+
 You can run the test with the following command from within the insight_testsuite folder:
 
 insight_testsuite~$ ./run_tests.sh 
+
 On a failed test, the output of run_tests.sh should look like:
 
 [FAIL]: test_1
 [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
+
 On success:
 
 [PASS]: test_1
