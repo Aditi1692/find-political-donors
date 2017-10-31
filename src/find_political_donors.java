@@ -108,7 +108,7 @@ public class find_political_donors {
 							value.addAmount(amount);
 							user_zipcode.put(cmte_id+zipcode, value);
 						}
-						medianvals_by_zip.print(median+"|"+ count+"|"+amount);
+						medianvals_by_zip.print(median+"|"+ count+"|"+(int)amount);
 						medianvals_by_zip.println();
 					}
 
@@ -132,7 +132,7 @@ public class find_political_donors {
             SortedSet<String> keys = new TreeSet<String>(user_date.keySet());
             for (String key : keys) { 
             	User_Date user = user_date.get(key);
-            	medianvals_by_date.println(user.cmte_id+"|"+user.date+"|"+user.getMedian()+"|"+user.getCount()+"|"+user.amount);
+            	medianvals_by_date.println(user.cmte_id+"|"+user.date+"|"+user.getMedian()+"|"+user.getCount()+"|"+(int)user.amount);
                 
             }
             // Always close files.
