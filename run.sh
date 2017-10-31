@@ -2,6 +2,6 @@
 #
 # Use this shell script to compile (if necessary) your code and then execute it. Below is an example of what might be found in this file if your program was written in Python
 #
-INPUT_FOLDER=C:/Users/ADJJAIN/Desktop/find-political-donors
-java -jar $INPUT_FOLDER/find_political_donors.jar tests/test_1/input/itcont.txt $INPUT_FOLDER\\insight_testsuite\\tests\\test_1\\output\\medianvals_by_zip.txt insight_testsuite\\tests\\test_1\\output\\medianvals_by_date.txt
-
+INPUT_FOLDER=/home/aditi/aditi_political_donors/find-political-donors/
+TEST_FOLDER=$INPUT_FOLDER/insight_testsuite/tests/test_1
+java -jar $INPUT_FOLDER/find_political_donors.jar $TEST_FOLDER/input/itcont.txt $TEST_FOLDER/output/medianvals_by_zip.txt $TEST_FOLDER/output/medianvals_by_date.txt

@@ -15,7 +15,8 @@ public class find_political_donors {
 	private static String[] state_name = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "AS", "DC", "FM", "GU", "MH", "MP", "PW", "PR", "VI"};
 	public static void main(String[] args) {
 		String line = null;
-		String fileName = "C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\input\\your-own-test.txt";
+		String fileName = arg[0];
+		//String fileName = "C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\input\\your-own-test.txt";
 		//String fileName = "C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\input\\itcont.txt";
 		
 		HashMap<String, User_Zipcode> user_zipcode = new HashMap<>();
@@ -31,11 +32,11 @@ public class find_political_donors {
                 new BufferedReader(fileReader);
 
           //create an print writer for writing to a file
-            PrintWriter medianvals_by_date = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\output\\medianvals_by_date.txt"));
+            PrintWriter medianvals_by_date = new PrintWriter(new FileWriter(arg[1]));
             //PrintWriter medianvals_by_date = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\output\\medianvals_by_date.txt"));
-
+	    
           //create an print writer for writing to a file
-            PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\your-own-test\\output\\medianvals_by_zip.txt"));
+            PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter(arg[2]));
             //PrintWriter medianvals_by_zip = new PrintWriter(new FileWriter("C:\\Users\\ADJJAIN\\workspace\\find_political_donors\\insight_testsuite\\tests\\test_1\\output\\medianvals_by_zip.txt"));
            
             
