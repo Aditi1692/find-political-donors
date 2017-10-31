@@ -27,7 +27,7 @@ On success:
 [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
 
                 
-Approach for the problem:
+# Approach for the problem:
 
 The program is written in JAVA 8 language. I have created two java class files: User_by_zip.java and User_by_date.java. The main class is present in find_political_donors.java.
 
