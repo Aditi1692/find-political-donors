@@ -19,34 +19,13 @@ On success:
 [PASS]: test_1
 [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
 
-Directory Structure:
-
-├── README.md 
-├── run.sh
-├── src
-│   └── find_political_donors.py
-├── input
-│   └── itcont.txt
-├── output
-|   └── medianvals_by_zip.txt
-|   └── medianvals_by_date.txt
-├── insight_testsuite
-    └── run_tests.sh
-    └── tests
-        └── test_1
-        |   ├── input
-        |   │   └── itcont.txt
-        |   |__ output
-        |   │   └── medianvals_by_zip.txt
-        |   |__ └── medianvals_by_date.txt
-        ├── your-own-test
-            ├── input
-            │   └── your-own-input.txt
-            |── output
-                └── medianvals_by_zip.txt
-                └── medianvals_by_date.txt
                 
 Approach for the problem:
 
 The program is written in JAVA 8 language. I have created two java class files: User_by_zip.java and User_by_date.java. The main class is present in find_political_donors.java.
-1. For generating medianvals_by_zip.txt, I have extracted User name and their corresponding zip code and stored them as the key in a map. The value of this map  
+
+1. For generating medianvals_by_zip.txt, I have extracted User name and their corresponding zip code and stored them as the key in a map. The value of this map  is the object that contains all the attributes required for generating the output file. This object contains the list of all the amount which can be further used to calculate the median. Also, it contains the cumulative amount corresponding to the user with the same zipcode.
+
+2. For generating medianvals_by_date.txt, I have extracted User name and their corresponding transaction date and stored them as the key in a map. The value of this map  is the object that contains all the attributes required for generating the output file. This object contains the list of all the amount which can be further used to calculate the median. Also, it contains the cumulative amount corresponding to the user with the same transaction date.
+
+The only difference between the two files is that the output for the file medianvals_by_zip.txt is generated line by line but for medianvals_by_date.txt it is generated after reading the input. The map is sorted and then it is iterated to generate the output.
