@@ -6,7 +6,11 @@ Generated output files:
 1. medianvals_by_zip.txt: contains a calculated running median, total dollar amount and total number of contributions by recipient and zip code.
 2. medianvals_by_date.txt: has the calculated median, total dollar amount and total number of contributions by recipient and date.
 
-Instructions to run the program:
+# Instructions to run the program:
+
+run.sh: Give the input/output file name path in the following format:
+
+java -jar find_political_donors.jar $input_filename_path/itcont.txt $output_filename_path/medianvals_by_zip.txt $output_filename_path/medianvals_by_date.txt 
 
 You can run the test with the following command from within the insight_testsuite folder:
 
